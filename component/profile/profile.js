@@ -11,7 +11,7 @@ import {
 
 import styles from "./style";
 
-export default class forgotpassword extends Component {
+export default class Profile extends Component {
   render() {
     return (
       <View>
@@ -37,8 +37,6 @@ export default class forgotpassword extends Component {
             </View>
             <Text style={styles.name_txt}>MS Dhoni</Text>
             <Text style={styles.hobi_txt}>Cricketer</Text>
-
-            {/* <View style={styles.profile_img} /> */}
           </ImageBackground>
         </View>
         <View style={styles.profile_img}>
@@ -62,7 +60,10 @@ export default class forgotpassword extends Component {
           </TouchableOpacity>
         </View>
         <View style={styles.btn}>
-          <TouchableOpacity style={styles.following_btn}>
+          <TouchableOpacity
+            style={styles.following_btn}
+            onPress={() => this.props.navigation.navigate("Following")}
+          >
             <Text style={styles.btn_txt}>Following</Text>
           </TouchableOpacity>
           <View style={styles.space} />

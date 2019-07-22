@@ -5,29 +5,14 @@ import {
   Text,
   Image,
   Button,
-  Platform,
   TextInput,
   TouchableOpacity,
   ImageBackground
 } from "react-native";
 
-//import { createStackNavigator, createAppContainer } from "react-navigation";
 import Styles from "./style";
 
-// let insp = Platform.select({
-//   android: {
-//     abc: "xyz"
-//   },
-//   ios: {
-//     abc: "pqr"
-//   }
-// });
-
-export default class header extends Component {
-  btn = () => {
-    alert("Enter valide detail");
-  };
-
+export default class Login extends Component {
   render() {
     return (
       <View style={Styles.main_class}>
@@ -79,14 +64,19 @@ export default class header extends Component {
           </View>
         </View>
         <View>
-          <Text style={Styles.frogotpassword_text}>Forgot your Password?</Text>
+          <Text
+            style={Styles.frogotpassword_text}
+            onPress={() => this.props.navigation.navigate("Forgotpassword")}
+          >
+            Forgot your Password?
+          </Text>
         </View>
         <View style={Styles.footer_button}>
           <Button
             style={Styles.footer_login_button}
-            onPress={this.btn}
             title="Login"
             color="white"
+            onPress={() => this.props.navigation.navigate("Profile")}
           />
         </View>
 
